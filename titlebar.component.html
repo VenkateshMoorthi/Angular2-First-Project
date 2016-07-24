@@ -1,0 +1,28 @@
+﻿
+	<div class="title-header">
+		<div class="hb1">
+			<button class="hamburger hamburger--slider" type="button" (click)="transition()" [class.is-active]="isLoading">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+		</div>
+	</div>
+	<div id="sidebar" [class.visible]="isLoading">
+		<ul>
+			<li class="bt1"><button class="btn">SIGN IN</button> </li>
+			<li><a (click)="extend1()">Get Started</a></li>
+			<li><a *ngIf="link1extend" ><div style="padding-left:10px;">Get a rate quote</div></a></li>
+			<li><a *ngIf="link1extend" [routerLink]="['Applyforpurchase']"><div style="padding-left:10px;">Apply for purchase</div></a></li>
+			<li><a *ngIf="link1extend" ><div style="padding-left:10px;">Apply for refinance</div></a></li>
+			<li><a (click)="extend2()">Company</a></li>
+			<li><a *ngIf="link2extend"><div style="padding-left:10px;">Contact us</div></a></li>
+			<li><a *ngIf="link2extend"><div style="padding-left:10px;">Careers</div></a></li>
+			<li><a (click)="extend3()">FAQ</a></li>
+			<li><a *ngIf="link3extend"><div style="padding-left:10px;">About Better</div></a></li>
+			<li><a *ngIf="link3extend"><div style="padding-left:10px;">Loan Types</div></a></li>
+			<li><a *ngIf="link3extend"><div style="padding-left:10px;">Rates</div></a></li>
+			<li><a *ngIf="link3extend"><div style="padding-left:10px;">Closing costs and fees</div></a></li>
+			<li><a *ngIf="link3extend"><div style="padding-left:10px;">Loan process</div></a></li>
+		</ul>
+	</div>
