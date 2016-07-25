@@ -1,1 +1,10 @@
-﻿	
+﻿	.btn {
+   font-family: "Gotham Rounded A","Gotham Rounded B","Gotham Rounded","Helvetica Neue",Helvetica,Arial,sans-serif!important;
+   font-weight: 400;
+   color: #ffffff;
+   font-size: 13px;
+   background: #000000;
+   padding: 10px 15px 10px 15px;
+   text-decoration: none;
+   cursor:pointer
+}
