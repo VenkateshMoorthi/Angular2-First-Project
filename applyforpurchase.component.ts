@@ -20,14 +20,15 @@ export class ApplyForPurchase {
 		"PUD-Attached", "PUD-Detached", "High Rise Condo(>7 stories)",
 		"Manufactored Mobile Home"];	
 	nextattempt = false;
+	
 
 	constructor(fb: FormBuilder) {
 		this.form = fb.group({
 			street: ['', Validators.required],
 			aptunit: [],
-			zipcode: [],
-			city: [],
-			state: [],
+			zipcode: ['', Validators.required],
+			city: ['', Validators.required],
+			state: ['', Validators.required],
 			homevalue: [],
 			propertyusage: [],
 			propertytype: []
@@ -38,6 +39,6 @@ export class ApplyForPurchase {
 	next(form) {
 		this.nextattempt = true;
 	}
-
+	
 
 }

@@ -8,3 +8,13 @@
    text-decoration: none;
    cursor:pointer
 }
+.red1 input {
+border:2px solid #ce301e;
+}
+
+.red1 label {
+color:#ce301e;
+}
+.red1 div {
+color:#ce301e;
+}

@@ -10,7 +10,7 @@
 							Tell us about the property you'd like to purchase.
 						</legend>
 						<div class="row">
-							<div class="form-group col-md-8">
+							<div class="form-group col-md-8" [class.red1]="!street.valid && nextattempt">
 								<label for="street">
 									Street address
 								</label>
@@ -20,11 +20,11 @@
 									   ngControl="street"
 									   placeholder="Enter a location"
 									   #street="ngForm" />
-								<div *ngIf="!street.valid && nextattempt" class="alert alert-danger">
+								<div *ngIf="!street.valid && nextattempt" >
 									Required.
 								</div>
-								</div>
-		
+							</div>
+
 							<div class="form-group col-md-4">
 								<label for="aptunit">
 									Apt/Unit
@@ -36,33 +36,48 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="form-group col-md-4">
+							<div class="form-group col-md-4" [class.red1]="!zipcode.valid && nextattempt">
 								<label for="zipcode">
 									ZIP code
 								</label>
 								<input type="text"
 									   class="form-control"
 									   id="zipcode"
-									   ngControl="zipcode" />
+									   ngControl="zipcode" 
+									   #zipcode="ngForm"/>
+								<div *ngIf="!zipcode.valid && nextattempt" >
+									Required.
+								</div>
 							</div>
-							<div class="form-group col-md-4">
+
+							<div class="form-group col-md-4" [class.red1]="!city.valid && nextattempt">
 								<label for="city">
 									City
 								</label>
 								<input type="text"
 									   class="form-control"
-									   id="city"
-									   ngControl="city" />
+							  		   id="city"
+									   ngControl="city" 
+									   #city="ngForm"/>
+								<div *ngIf="!city.valid && nextattempt">
+									Required.
+								</div>
 							</div>
-							<div class="form-group col-md-4">
+							<div class="form-group col-md-4" [class.red1]="!state.valid && nextattempt">
 								<label for="state">
 									State
 								</label>
 								<input type="text"
 									   class="form-control"
 									   id="state"
-									   ngControl="state" />
+									   ngControl="state"
+									   #state="ngForm"
+									    />
+								<div *ngIf="!state.valid && nextattempt" >
+									Required.
+								</div>
 							</div>
+
 						</div>
 						<div class="row">
 							<div class="form-group col-md-4">
@@ -89,14 +104,14 @@
 								</label>
 								<select class="form-control"
 										id="propertytype"
-											ngControl="propertytype">
+										ngControl="propertytype">
 									<option value=""></option>
 									<option *ngFor="let propertytype of propertytypes" [value]="propertytype">{{propertytype}}</option>
 								</select>
 							</div>
 						</div>
 						<div style="padding-left:630px">
-							<button class="btn" type="button" (click)="next()" >Next</button>
+							<button class="btn" type="button" (click)="next()">Next</button>
 						</div>
 
 
