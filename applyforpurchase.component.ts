@@ -13,14 +13,14 @@ import {FormGroup} from '@angular/forms';
 
 export class ApplyForPurchase {
 	form: ControlGroup;
-	model;
+	model; 
 	
 	propertytypes = ["Single Family", "Townhouse", "Condo",
 		"Cooperative", "2 to 4 units", "Multifamily (>4 units)",
 		"PUD-Attached", "PUD-Detached", "High Rise Condo(>7 stories)",
 		"Manufactored Mobile Home"];	
 	nextattempt = false;
-	
+	touched = false;
 
 	constructor(fb: FormBuilder) {
 		this.form = fb.group({

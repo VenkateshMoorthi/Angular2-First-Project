@@ -18,3 +18,38 @@ color:#ce301e;
 .red1 div {
 color:#ce301e;
 }
+
+.is-focused label{
+color:#31766f;
+}
+
+.pseudo-table {
+    display: table;  }
+
+label {
+    display: table-header-group;
+}
+
+input {
+    display: table-row-group; 
+	
+}
+
+select {
+display:table-row-group;
+}
+select:focus + label {
+    color:#31766f;
+    font-weight: bold;
+	font-size:14.5px;
+}
+
+input:focus + label {
+    color:#31766f;
+    font-weight: bold;
+	font-size:14.5px;
+}
+
+	input:focus {
+		border:2px solid #31766f;
+	}

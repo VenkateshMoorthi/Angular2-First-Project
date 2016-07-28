@@ -10,69 +10,77 @@
 							Tell us about the property you'd like to purchase.
 						</legend>
 						<div class="row">
-							<div class="form-group col-md-8" [class.red1]="!street.valid && nextattempt">
-								<label for="street">
-									Street address
-								</label>
+							<div class="form-group col-md-8 pseudo-table" [class.red1]="!street.valid && nextattempt" [class.is-focused]="touched">
+								
 								<input type="text"
 									   class="form-control"
 									   id="street"
 									   ngControl="street"
 									   placeholder="Enter a location"
-									   #street="ngForm" />
+									   #street="ngForm" 
+									   />
+								
+								<label for="street">
+									Street address
+								</label>
 								<div *ngIf="!street.valid && nextattempt" >
 									Required.
 								</div>
 							</div>
 
-							<div class="form-group col-md-4">
-								<label for="aptunit">
-									Apt/Unit
-								</label>
+							<div class="form-group col-md-4 pseudo-table">
+								
 								<input type="text"
 									   class="form-control"
 									   id="aptunit"
 									   ngControl="aptunit" />
+								<label for="aptunit">
+									Apt/Unit
+								</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="form-group col-md-4" [class.red1]="!zipcode.valid && nextattempt">
-								<label for="zipcode">
-									ZIP code
-								</label>
+							<div class="form-group col-md-4 pseudo-table" [class.red1]="!zipcode.valid && nextattempt">
+								
 								<input type="text"
 									   class="form-control"
 									   id="zipcode"
 									   ngControl="zipcode" 
 									   #zipcode="ngForm"/>
+								<label for="zipcode">
+									ZIP code
+								</label>
 								<div *ngIf="!zipcode.valid && nextattempt" >
 									Required.
 								</div>
 							</div>
 
-							<div class="form-group col-md-4" [class.red1]="!city.valid && nextattempt">
-								<label for="city">
-									City
-								</label>
+							<div class="form-group col-md-4 pseudo-table" [class.red1]="!city.valid && nextattempt" >
+								
 								<input type="text"
 									   class="form-control"
 							  		   id="city"
 									   ngControl="city" 
-									   #city="ngForm"/>
+									   #city="ngForm" 
+									   onclick="touch()"/>
+								<label for="city">
+									City
+								</label>
 								<div *ngIf="!city.valid && nextattempt">
 									Required.
 								</div>
 							</div>
-							<div class="form-group col-md-4" [class.red1]="!state.valid && nextattempt">
-								<label for="state">
-									State
-								</label>
+							<div class="form-group col-md-4 pseudo-table" [class.red1]="!state.valid && nextattempt">
+								
 								<input type="text"
 									   class="form-control"
 									   id="state"
 									   ngControl="state"
 									   #state="ngForm"
 									    />
+								<label for="state">
+									State
+								</label>
 								<div *ngIf="!state.valid && nextattempt" >
 									Required.
 								</div>
@@ -80,34 +88,37 @@
 
 						</div>
 						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="homevalue">
-									Estimated home value
-								</label>
+							<div class="form-group col-md-4 pseudo-table">
+								
 								<input type="text"
 									   class="form-control"
 									   id="homevalue"
 									   ngControl="homevalue" />
-							</div>
-							<div class="form-group col-md-4">
-								<label for="propertyusage">
-									Property usage
+								<label for="homevalue">
+									Estimated home value
 								</label>
+							</div>
+							<div class="form-group col-md-4 pseudo-table">
+								
 								<input type="text"
 									   class="form-control"
 									   id="propertyusage"
 									   ngControl="propertyusage" />
-							</div>
-							<div class="form-group col-md-4">
-								<label for="propertytype">
-									Property type
+								<label for="propertyusage">
+									Property usage
 								</label>
+							</div>
+							<div class="form-group col-md-4 pseudo-table">
+								
 								<select class="form-control"
 										id="propertytype"
 										ngControl="propertytype">
 									<option value=""></option>
 									<option *ngFor="let propertytype of propertytypes" [value]="propertytype">{{propertytype}}</option>
 								</select>
+								<label for="propertytype">
+									Property type
+								</label>
 							</div>
 						</div>
 						<div style="padding-left:630px">
