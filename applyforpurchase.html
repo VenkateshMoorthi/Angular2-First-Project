@@ -1,16 +1,23 @@
-﻿<div class="container-fluid">
+﻿
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-2"></div>
 		<div class="col-md-8	 ">
 			<h1>Property information</h1>
+		
 				<div class="well">
 				<form [ngFormModel]="form" >
 					<fieldset>
 						<legend>
 							Tell us about the property you'd like to purchase.
 						</legend>
+						
 						<div class="row">
-							<div class="form-group col-md-8 pseudo-table" [class.red1]="!street.valid && nextattempt" [class.is-focused]="touched">
+							
+							
+							<div class="form-group col-md-8 pseudo-table" [class.red1]="!street.valid && nextattempt" [class.is-focused]="touched" 
+					
+								 >
 								
 								<input type="text"
 									   class="form-control"
@@ -18,6 +25,7 @@
 									   ngControl="street"
 									   placeholder="Enter a location"
 									   #street="ngForm" 
+									   [(ngModel)]="street1" (setAddress)="getAddress($event)" googleplace
 									   />
 								
 								<label for="street">
@@ -62,7 +70,7 @@
 							  		   id="city"
 									   ngControl="city" 
 									   #city="ngForm" 
-									   onclick="touch()"/>
+									   />
 								<label for="city">
 									City
 								</label>
@@ -130,7 +138,7 @@
 				</form>
 
 			</div>
-		</div>
+		</div>	
 	</div>
 </div>
 

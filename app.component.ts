@@ -1,9 +1,8 @@
-import {Component} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 import {TitleBarComponent} from './titlebar.component';
-import { ROUTER_DIRECTIVES, RouteConfig} from '@angular/router-deprecated';
+import {ROUTER_DIRECTIVES, RouteConfig} from '@angular/router-deprecated';
 import {ApplyForPurchase} from './applyforpurchase.component';
-import {HomeComponent} from './home.component'
-
+import {HomeComponent} from './home.component';
 
 @RouteConfig([
 	{ path: '/', name: 'Home', component: HomeComponent, useAsDefault: true },
@@ -22,4 +21,6 @@ import {HomeComponent} from './home.component'
 `,
 	directives: [TitleBarComponent, ROUTER_DIRECTIVES, HomeComponent]
 })
-export class AppComponent { }
+export class AppComponent {
+	
+}
